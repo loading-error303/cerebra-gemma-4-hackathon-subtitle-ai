@@ -1,0 +1,18 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "provider": {
+    "cerebras-hackaton": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Cerebras (hackaton)",
+      "options": {
+        "baseURL": "https://api.cerebras.ai/v1",
+        "apiKey": "{env:CEREBRAS_API_KEY}"
+      },
+      "models": {
+        "gemma-4-31b": {
+          "name": "Gemma 4 Dense"
+        }
+      }
+    }
+  }
+}

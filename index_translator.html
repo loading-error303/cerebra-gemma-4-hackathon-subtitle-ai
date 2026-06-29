@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Subtitle Translator</title>
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; display: flex; justify-content: center; align-items: center; min-height: 100vh; margin: 0; background: #f0f2f5; }
+        .container { background: white; padding: 2rem; border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.1); width: 100%; max-width: 500px; text-align: center; }
+        h1 { color: #1a73e8; margin-bottom: 1.5rem; }
+        .form-group { margin-bottom: 1.5rem; text-align: left; }
+        label { display: block; margin-bottom: 0.5rem; font-weight: bold; color: #555; }
+        input[type="file"], select { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; box-sizing: border-box; }
+        button { background: #1a73e8; color: white; border: none; padding: 12px 24px; border-radius: 6px; cursor: pointer; font-size: 16px; width: 100%; transition: background 0.3s; }
+        button:hover { background: #1557b0; }
+        button:disabled { background: #ccc; cursor: not-allowed; }
+        #status { margin-top: 1.5rem; font-style: italic; color: #666; }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Subtitle Translator</h1>
+        <div class="form-group">
+            <label for="video">Select MP4 Video:</label>
+            <input type="file" id="video" accept="video/mp4">
+        </div>
+        <div class="form-group">
+            <label for="language">Target Language:</label>
+            <select id="language">
+                <option value="en">English</option>
+                <option value="es">Spanish</option>
+                <option value="fr">French</option>
+                <option value="de">German</option>
+                <option value="it">Italian</option>
+                <option value="ru">Russian</option>
+                <option value="zh-CN">Chinese (Simplified)</option>
+                <option value="ja">Japanese</option>
+                <option value="ko">Korean</option>
+            </select>
+        </div>
+        <button id="submitBtn">Translate & Download</button>
+        <div id="status"></div>
+    </div>
+
+    <script>
+        const submitBtn = document.getElementById('submitBtn');
+        const status = document.getElementById('status');
+
+        submitBtn.addEventListener('click', async () => {
+            const videoFile = document.getElementById('video').files[0];
+            const language = document.getElementById('language').value;
+
+            if (!videoFile) {
+                alert('Please select a video file first!');
+                return;
+            }
+
+            const formData = new FormData();
+            formData.append('video', videoFile);
+            formData.append('language', language);
+
+            submitBtn.disabled = true;
+            status.innerText = 'Processing... This may take a few minutes depending on video length.';
+
+            try {
+                const response = await fetch('http://127.0.0.1:5000/translate', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                if (!response.ok) {
+                    const errData = await response.json();
+                    throw new Error(errData.error || 'Something went wrong');
+                }
+
+                const blob = await response.blob();
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = `translated_${videoFile.name}`;
+                document.body.appendChild(a);
+                a.click();
+                a.remove();
+                status.innerText = 'Success! Your video has been downloaded.';
+            } catch (error) {
+                status.innerText = 'Error: ' + error.message;
+            } finally {
+                submitBtn.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>
