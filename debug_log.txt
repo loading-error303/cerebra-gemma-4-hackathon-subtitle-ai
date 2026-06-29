@@ -6027,3 +6027,162 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-28 20:09:07,769 - DEBUG - Merge successful! Saved as C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv
 2026-06-28 20:09:08,032 - DEBUG - close.started
 2026-06-28 20:09:08,033 - DEBUG - close.complete
+2026-06-28 20:19:03,766 - DEBUG - Initializing OCR reader with GPU support...
+2026-06-28 20:19:03,767 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2026-06-28 20:19:04,916 - DEBUG - OCR reader initialized successfully on GPU.
+2026-06-28 20:19:24,999 - DEBUG - Checking for embedded subtitles in C:/Users/karna/Videos/Screen Recordings/30_sec_vid.mp4...
+2026-06-28 20:19:25,068 - DEBUG - No embedded subtitles found. Switching to OCR mode...
+2026-06-28 20:19:25,068 - DEBUG - Starting OCR extraction...
+2026-06-28 20:19:25,098 - DEBUG - Video opened. FPS: 30.017798466593646, Total Frames: 877
+2026-06-28 20:19:25,138 - DEBUG - Processing frame 0 at 0.00s
+2026-06-28 20:19:25,827 - DEBUG - Found text: You know what's kind of weird?
+2026-06-28 20:19:25,877 - DEBUG - Processing frame 60 at 2.00s
+2026-06-28 20:19:26,520 - DEBUG - Found text: t 'What kind of games do you Iike?"
+2026-06-28 20:19:26,572 - DEBUG - Processing frame 120 at 4.00s
+2026-06-28 20:19:27,376 - DEBUG - Found text: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb
+2026-06-28 20:19:27,428 - DEBUG - Processing frame 180 at 6.00s
+2026-06-28 20:19:28,116 - DEBUG - Found text: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters
+2026-06-28 20:19:28,163 - DEBUG - Processing frame 240 at 8.00s
+2026-06-28 20:19:28,820 - DEBUG - Found text: Yousav tactica shontels and they rspono @n 50-
+2026-06-28 20:19:28,871 - DEBUG - Processing frame 300 at 9.99s
+2026-06-28 20:19:29,548 - DEBUG - Found text: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and
+2026-06-28 20:19:29,597 - DEBUG - Processing frame 360 at 11.99s
+2026-06-28 20:19:30,258 - DEBUG - Found text: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,
+2026-06-28 20:19:30,311 - DEBUG - Processing frame 420 at 13.99s
+2026-06-28 20:19:30,964 - DEBUG - Found text: F VALORANT And You acwalv only 3f9
+2026-06-28 20:19:31,013 - DEBUG - Processing frame 480 at 15.99s
+2026-06-28 20:19:31,663 - DEBUG - Found text: "Strategy Games" acvaIy Gniy Counter-Siike strleq
+2026-06-28 20:19:31,729 - DEBUG - Processing frame 540 at 17.99s
+2026-06-28 20:19:32,727 - DEBUG - Found text: 'Dude, you @ptta try Glv one ot ttone gamed that'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;
+2026-06-28 20:19:32,788 - DEBUG - Processing frame 600 at 19.99s
+2026-06-28 20:19:33,545 - DEBUG - Found text: Every gam sometime sometime It's just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like
+2026-06-28 20:19:33,594 - DEBUG - Processing frame 660 at 21.99s
+2026-06-28 20:19:34,207 - DEBUG - Found text: somethlng more hke Hearthstone; Game dent85 3ie"
+2026-06-28 20:19:34,255 - DEBUG - Processing frame 720 at 23.99s
+2026-06-28 20:19:34,881 - DEBUG - Found text: somethlng more lke Hearthstone; Game gent85 are kind of bnken_
+2026-06-28 20:19:34,924 - DEBUG - Processing frame 780 at 25.98s
+2026-06-28 20:19:35,535 - DEBUG - Found text: Blrt | thlrsk there & better %ayto think abdul thiz
+2026-06-28 20:19:35,585 - DEBUG - Processing frame 840 at 27.98s
+2026-06-28 20:19:36,209 - DEBUG - Found text: thlk about Ihls, And Its a much Bimplet quat" lodt a
+2026-06-28 20:19:36,264 - DEBUG - Reached end of video or read failed.
+2026-06-28 20:19:36,280 - DEBUG - OCR finished. Total entries found: 15
+2026-06-28 20:19:36,289 - DEBUG - Batch processing 15 lines with Gemma-4...
+2026-06-28 20:19:36,646 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-cfc8a59e-5b40-440f-a168-0ce1986dca7d', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': "You are a professional translator. I will give you a list of numbered lines of messy OCR text. First, fix the typos and grammar in English, then translate the corrected text into es. Return the result in the EXACT same format: 'Line X: translated text'. Do not add any other text or explanations."}, {'role': 'user', 'content': 'Line 1: You know what\'s kind of weird?\nLine 3: t \'What kind of games do you Iike?"\nLine 5: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb\nLine 7: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters\nLine 9: Yousav tactica shontels and they rspono @n 50-\nLine 11: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and\nLine 13: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,\nLine 15: F VALORANT And You acwalv only 3f9\nLine 17: "Strategy Games" acvaIy Gniy Counter-Siike strleq\nLine 19: \'Dude, you @ptta try Glv one ot ttone gamed that\'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;\nLine 21: Every gam sometime sometime It\'s just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like\nLine 23: somethlng more hke Hearthstone; Game dent85 3ie"\nLine 25: somethlng more lke Hearthstone; Game gent85 are kind of bnken_\nLine 27: Blrt | thlrsk there & better %ayto think abdul thiz\nLine 29: thlk about Ihls, And Its a much Bimplet quat" lodt a'}], 'model': 'gemma-4-31b', 'temperature': 0.1}}
+2026-06-28 20:19:36,668 - DEBUG - Sending HTTP Request: POST https://api.cerebras.ai/v1/chat/completions
+2026-06-28 20:19:36,668 - DEBUG - connect_tcp.started host='api.cerebras.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-06-28 20:19:36,673 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E85D978980>
+2026-06-28 20:19:36,673 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E8310AEFD0> server_hostname='api.cerebras.ai' timeout=5.0
+2026-06-28 20:19:36,678 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E85B171BD0>
+2026-06-28 20:19:36,678 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-06-28 20:19:36,678 - DEBUG - send_request_headers.complete
+2026-06-28 20:19:36,678 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-06-28 20:19:36,679 - DEBUG - send_request_body.complete
+2026-06-28 20:19:36,679 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-06-28 20:19:37,296 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 29 Jun 2026 03:19:37 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'set-cookie', b'__cf_bm=g8ucZ.WquU9WJlDtgqKFGyU64Up0KPRPA0Vgf1aBnF0-1782703177.109348-1.0.1.1-vpmk8smPBs1nEqVGAbA1v1_UxXMoojQ2LsLMSSztzT4hZsg_Dnvn96fD_P8Z1070GRC1dsdeMsemQ7kg5Osut09N.ffPxK66_zpqyP5lcpGlIDLZ6RGrEGLw85csarUE; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:49:37 GMT'), (b'Server', b'cloudflare'), (b'x-request-id', b'a131ca68eab55939-CMH'), (b'x-ratelimit-remaining-requests-minute', b'99'), (b'x-ratelimit-remaining-requests-hour', b'5999'), (b'x-ratelimit-remaining-requests-day', b'143999'), (b'x-ratelimit-remaining-tokens-minute', b'83216'), (b'x-ratelimit-remaining-tokens-hour', b'5983216'), (b'x-ratelimit-remaining-tokens-day', b'143983216'), (b'x-ratelimit-limit-requests-minute', b'100'), (b'x-ratelimit-limit-requests-hour', b'6000'), (b'x-ratelimit-limit-requests-day', b'144000'), (b'x-ratelimit-limit-tokens-minute', b'100000'), (b'x-ratelimit-limit-tokens-hour', b'6000000'), (b'x-ratelimit-limit-tokens-day', b'144000000'), (b'inference-id', b'chatcmpl-c308ef1a-2cb9-4f7a-b5d8-ecfc5ad7b17b'), (b'referrer-policy', b'strict-origin-when-cross-origin'), (b'x-content-type-options', b'nosniff'), (b'strict-transport-security', b'max-age=15552000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a131ca68eab55939-PDX'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-06-28 20:19:37,296 - INFO - HTTP Request: POST https://api.cerebras.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 20:19:37,297 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-06-28 20:19:37,297 - DEBUG - receive_response_body.complete
+2026-06-28 20:19:37,297 - DEBUG - response_closed.started
+2026-06-28 20:19:37,297 - DEBUG - response_closed.complete
+2026-06-28 20:19:37,297 - DEBUG - HTTP Response: POST https://api.cerebras.ai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 29 Jun 2026 03:19:37 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'set-cookie': '__cf_bm=g8ucZ.WquU9WJlDtgqKFGyU64Up0KPRPA0Vgf1aBnF0-1782703177.109348-1.0.1.1-vpmk8smPBs1nEqVGAbA1v1_UxXMoojQ2LsLMSSztzT4hZsg_Dnvn96fD_P8Z1070GRC1dsdeMsemQ7kg5Osut09N.ffPxK66_zpqyP5lcpGlIDLZ6RGrEGLw85csarUE; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:49:37 GMT', 'server': 'cloudflare', 'x-request-id': 'a131ca68eab55939-CMH', 'x-ratelimit-remaining-requests-minute': '99', 'x-ratelimit-remaining-requests-hour': '5999', 'x-ratelimit-remaining-requests-day': '143999', 'x-ratelimit-remaining-tokens-minute': '83216', 'x-ratelimit-remaining-tokens-hour': '5983216', 'x-ratelimit-remaining-tokens-day': '143983216', 'x-ratelimit-limit-requests-minute': '100', 'x-ratelimit-limit-requests-hour': '6000', 'x-ratelimit-limit-requests-day': '144000', 'x-ratelimit-limit-tokens-minute': '100000', 'x-ratelimit-limit-tokens-hour': '6000000', 'x-ratelimit-limit-tokens-day': '144000000', 'inference-id': 'chatcmpl-c308ef1a-2cb9-4f7a-b5d8-ecfc5ad7b17b', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-content-type-options': 'nosniff', 'strict-transport-security': 'max-age=15552000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'cf-ray': 'a131ca68eab55939-PDX', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-06-28 20:19:37,297 - DEBUG - request_id: a131ca68eab55939-CMH
+2026-06-28 20:19:37,315 - DEBUG - Merging subtitles into C:/Users/karna/Videos/Screen Recordings/30_sec_vid_translated.mkv...
+2026-06-28 20:19:37,434 - DEBUG - Merge successful! Saved as C:/Users/karna/Videos/Screen Recordings/30_sec_vid_translated.mkv
+2026-06-28 20:20:21,758 - DEBUG - Checking for embedded subtitles in C:/Users/karna/Videos/Screen Recordings/Screen Recording 2026-06-28 185946.mp4...
+2026-06-28 20:20:21,821 - DEBUG - No embedded subtitles found. Switching to OCR mode...
+2026-06-28 20:20:21,822 - DEBUG - Starting OCR extraction...
+2026-06-28 20:20:21,850 - DEBUG - Video opened. FPS: 30.0, Total Frames: 25290
+2026-06-28 20:20:21,887 - DEBUG - Processing frame 0 at 0.00s
+2026-06-28 20:20:22,507 - DEBUG - Found text: You know what's kind of weird?
+2026-06-28 20:20:22,557 - DEBUG - Processing frame 60 at 2.00s
+2026-06-28 20:20:23,180 - DEBUG - Found text: t 'What kind Of games do you Iike?"
+2026-06-28 20:20:23,234 - DEBUG - Processing frame 120 at 4.00s
+2026-06-28 20:20:23,994 - DEBUG - Found text: t TTANTT English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla ansivb
+2026-06-28 20:20:24,047 - DEBUG - Processing frame 180 at 6.00s
+2026-06-28 20:20:24,740 - DEBUG - Found text: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters
+2026-06-28 20:20:24,790 - DEBUG - Processing frame 240 at 8.00s
+2026-06-28 20:20:25,453 - DEBUG - Found text: Yousav tactica shontels and they rspong @n 50-
+2026-06-28 20:20:25,505 - DEBUG - Processing frame 300 at 10.00s
+2026-06-28 20:20:26,182 - DEBUG - Found text: must Iikez VALORANT [esnono "Oh $0 Yl must Ilke Counler-Strike; Valorant and "You
+2026-06-28 20:20:26,235 - DEBUG - Processing frame 360 at 12.00s
+2026-06-28 20:20:26,878 - DEBUG - Found text: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,
+2026-06-28 20:20:26,928 - DEBUG - Processing frame 420 at 14.00s
+2026-06-28 20:20:27,565 - DEBUG - Found text: F VALORANT And vol acwalv only 3f9
+2026-06-28 20:20:27,617 - DEBUG - Processing frame 480 at 16.00s
+2026-06-28 20:20:28,239 - DEBUG - Found text: "Strategy Games" acvaIy Gniy Counter-Siike strleq
+2026-06-28 20:20:28,308 - DEBUG - Processing frame 540 at 18.00s
+2026-06-28 20:20:29,307 - DEBUG - Found text: 'Dude, you @ptta try Glv ohe ot ttone gamed that'g way more tun than tounda_ You gtert with bupically nothing und glowdy build up thig huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Civilcation Vanic;
+2026-06-28 20:20:29,372 - DEBUG - Processing frame 600 at 20.00s
+2026-06-28 20:20:30,106 - DEBUG - Found text: Every gam sometime sometime It's just re And somel What like and then I yau Clvllzatlon %hen YOu wianted somethind Mote Ike
+2026-06-28 20:20:30,153 - DEBUG - Processing frame 660 at 22.00s
+2026-06-28 20:20:30,765 - DEBUG - Found text: somethlng more hke Hearthstone; Game dent85 3ie"
+2026-06-28 20:20:30,813 - DEBUG - Processing frame 720 at 24.00s
+2026-06-28 20:20:31,423 - DEBUG - Found text: somethlng more lke Hearthstone; Game gent85 are kind of bnken_
+2026-06-28 20:20:31,466 - DEBUG - Processing frame 780 at 26.00s
+2026-06-28 20:20:32,095 - DEBUG - Found text: Blrt | thlrsk there & better %ayto think abdul thiz
+2026-06-28 20:20:32,144 - DEBUG - Processing frame 840 at 28.00s
+2026-06-28 20:20:32,758 - DEBUG - Found text: thlk about Ihls, And Its a much Bimplet quat" lodt a
+2026-06-28 20:20:32,812 - DEBUG - Processing frame 900 at 30.00s
+2026-06-28 20:20:33,426 - DEBUG - Found text: Slrrin Yame = and Once UOU see IC
+2026-06-28 20:20:33,473 - DEBUG - Processing frame 960 at 32.00s
+2026-06-28 20:20:34,164 - DEBUG - Found text: VD]U SB Xpuame? nlch Inare difteretitly_ yeuv
+2026-06-28 20:20:34,227 - DEBUG - Processing frame 1020 at 34.00s
+2026-06-28 20:20:34,973 - DEBUG - Found text: But let's start somewhere everyone can ditlerentl Rit Iets#nt famc  hen_ cwctvonccan
+2026-06-28 20:20:35,037 - DEBUG - Processing frame 1080 at 36.00s
+2026-06-28 20:20:35,667 - DEBUG - Found text: evetyonecanadree_ Every dam has enitleiminqu
+2026-06-28 20:20:35,727 - DEBUG - Processing frame 1140 at 38.00s
+2026-06-28 20:20:36,359 - DEBUG - Found text: snmething thal senarates tegord plakcrs from [hc bjo
+2026-06-28 20:20:36,435 - DEBUG - Processing frame 1200 at 40.00s
+2026-06-28 20:20:37,090 - DEBUG - Found text: 323 from the bad ones. Sometimes il & pur8 piaen;;
+2026-06-28 20:20:37,144 - DEBUG - Processing frame 1260 at 42.00s
+2026-06-28 20:20:37,893 - DEBUG - Found text: Aeactlon Tlme 167ms Save YOur ECOre 080 how YOU COmara. Kamctimes It $ nlile #KIII Yolit Icilczcs "cur Jim
+2026-06-28 20:20:37,975 - DEBUG - Processing frame 1320 at 44.00s
+2026-06-28 20:20:38,866 - DEBUG - Found text: pLawTInG 0.au IGEou "100 "100 %100 '7 100 %100 Jellat Ilctnhic As Et Teilexea Ycur aim Tour timino Xnrnetirnes Un e
+2026-06-28 20:20:38,951 - DEBUG - Processing frame 1380 at 46.00s
+2026-06-28 20:20:39,831 - DEBUG - Found text: pLaxtInG 0 7 020 IGarou "52 "100 100 %100 Anweba Lllwi Ilclnhic FLIAvS Et Iedlexes, YOUr alm; ycour 01 Somelimes it's inlormation; knorging e thur a
+2026-06-28 20:20:39,914 - DEBUG - Processing frame 1440 at 48.00s
+2026-06-28 20:20:40,724 - DEBUG - Found text: CMS YOU Hiti "100 78} %100 '100 brdny Ilklnhic IAAvS Et Isometinies It : Information; knowing things the othetr Person dobsni 78hA0i
+2026-06-28 20:20:40,802 - DEBUG - Processing frame 1500 at 50.00s
+2026-06-28 20:20:41,893 - DEBUG - Found text: Nlt LLci intel LYHH "6 @4ctHihg BE EpihIE HELYYGIL SHENTY 0466? FurIaIL MaS Dat KsTi #406 04 uia thlngs the other doesnt: Sometimes il'5 sonething HeaYTDDD Mae Aon
+2026-06-28 20:20:41,976 - DEBUG - Processing frame 1560 at 52.00s
+2026-06-28 20:20:42,948 - DEBUG - Found text: LaAa #AL UJIW LYHN "C @gahing BE EapihIE HEXTYGIE 35 #46681 FuIEIaIL h0) #St MSMLAr I100 0T#B 03 Imuse; nc HA 2 Ie Mentai
+2026-06-28 20:20:43,027 - DEBUG - Processing frame 1620 at 54.00s
+2026-06-28 20:20:43,876 - DEBUG - Found text: #EK] HbLL 0.33 {JgtIta55 Get 3 Free Cases +5%6 Link in Description YALOEAR 40 40 04 40 #20 [muzi] 'mental sida, reading Paopla YIMDAA DMIIA Dep
+2026-06-28 20:20:43,952 - DEBUG - Processing frame 1680 at 56.00s
+2026-06-28 20:20:44,892 - DEBUG - Found text: LLL TOrR'NG; Get 3 Free Cases +5% Link in Description 316 YALOAAR MAA 05 %n6 the mental slde  readingj people, Sn8 managing randomnuaa, and adapting YminbLk DMIIA Dep 04 W
+2026-06-28 20:20:44,967 - DEBUG - Processing frame 1740 at 58.00s
+2026-06-28 20:20:45,952 - DEBUG - Found text: #EK] AI 7 7 HbLL MnITT LIAIDAT {JGv[ERS} STYKo %k 3 Free Cases +5% Link in Description YALOEALR HUA 64 [L 04 40 Gitin 3n0 managng randomness and adaptlng = 876' YIHDAR TMTIA Dep
+2026-06-28 20:20:46,032 - DEBUG - Processing frame 1800 at 60.00s
+2026-06-28 20:20:46,723 - DEBUG - Found text: 0.29 CC#OD +JoHP Ilnbse arentiusl differ skills
+2026-06-28 20:20:46,794 - DEBUG - Processing frame 1860 at 62.00s
+2026-06-28 20:20:47,473 - DEBUG - Found text: TUOD 6ommo Thesearen't Just different skills, they undamentally dinerent
+2026-06-28 20:20:47,532 - DEBUG - Processing frame 1920 at 64.00s
+2026-06-28 20:20:48,153 - DEBUG - Found text: fiinchmentally diffsrent knds; nf damcpi GndMost
+2026-06-28 20:20:48,200 - DEBUG - Processing frame 1980 at 66.00s
+2026-06-28 20:20:48,830 - DEBUG - Found text: gamenlay: And mnast galnes mix them [ooclhcr dim erent amcunts
+2026-06-28 20:20:48,891 - DEBUG - Processing frame 2040 at 68.00s
+2026-06-28 20:20:49,525 - DEBUG - Found text: tnctether In dtierent amcujnt:; Imsin: Mc qivc
+2026-06-28 20:20:49,572 - DEBUG - Processing frame 2100 at 70.00s
+2026-06-28 20:20:50,320 - DEBUG - Found text: tncether dtierent amcujnt:; Imsin: SolciMc divc Vou [hrCc !crds Micrc
+2026-06-28 20:20:50,365 - DEBUG - Processing frame 2160 at 72.00s
+2026-06-28 20:20:51,023 - DEBUG - Found text: #olet megle Yallthree Wnrds; MCso.Macio
+2026-06-28 20:20:51,130 - DEBUG - Processing frame 2220 at 74.00s
+2026-06-28 20:20:51,717 - DEBUG - Processing frame 2280 at 76.00s
+2026-06-28 20:20:52,498 - DEBUG - Found text: ef initialize( code nil) tag_first code.split( )[0] @product_code code.split( '_')[1].sub(/|(.*/ created_info code.split( ' ( ')[1].sub(/1)S/ 0I ) row harz & Whete dete intaratino and
+2026-06-28 20:20:52,548 - DEBUG - Processing frame 2340 at 78.00s
+2026-06-28 20:20:53,377 - DEBUG - Found text: ef initialize( code nil) tag_first code.split( )[0] @product_code code.split( '_')[1].sub(/|(.*/ created_info code.split( ' ( ') [1].sub(/1)S/ 0I ) set_gr] Now here $ whete Interestlng and a litue uncomfonabie
+2026-06-28 20:20:53,423 - DEBUG - Processing frame 2400 at 80.00s
+2026-06-28 20:20:54,107 - DEBUG - Found text: "71[,' Ihtde ucomfortable; what If | told U +8 CeBanat way 10
+2026-06-28 20:20:54,161 - DEBUG - Processing frame 2460 at 82.00s
+2026-06-28 20:20:54,795 - DEBUG - Found text: You tre clearest way 10 unders  name actually legunp
+2026-06-28 20:20:54,856 - DEBUG - Processing frame 2520 at 84.00s
+2026-06-28 20:20:58,865 - DEBUG - Found text: J4rIt 4ny_ DhdYJ OAA  AAYetcht TAMkA Nitta Lt4rine44714 JVIl 4d J14r 4e 5n14 AHt La= (Cijx I44 hIb #4tyt EA4+' PAItHraAL Ba4et' (Atateetnan L LatIttan I14 MSt Ittttt #arainugt[Ii'E 46IMA[ UAkN {Rnitt'Kakt {~IMJ WI' 54 4nm M1e4Icllz Wle LHAr[T[It HTa nhtAAAC [RtAMlTHA{ (ijx I #vrt AlnuA L4uain L"R[A ADLH AtJy-YCE Wn-La aaId "rttithjvorikitrotat Kethni 'atdon Kaltnakn4- Ilme_ Kaati LiiotlJ 'InT'Ko-Mectu)it-EttyI-Lki-K Kntttcy HMIMtA CNhet LN"rta 'MArDAr-a 4E7-o Ate- Ntk-[nt  Yuoahxninanuitt dutktotatbritltsot HirtA 'Ehloite uttooiit Litth-tn Hidt HTuMtA Batitrit Katte VelLt Hvrt It4rId 4MaI AA[#NAo+1 LWIMtA TaattVy-Tt #n-ll+ aad 'InktrittrvirikitroF- "M* 'Mtu44*m "atntrn= Foyeny actu? tesung tlnk abouthdtt YOV Wein" Jane
+2026-06-28 20:20:58,927 - DEBUG - Processing frame 2580 at 86.00s
+2026-06-28 20:20:59,521 - DEBUG - Found text: aboul how you chcal in il?
+2026-06-28 20:20:59,574 - DEBUG - Processing frame 2640 at 88.00s
+2026-06-28 20:21:00,238 - DEBUG - Found text: It You wanter EInnd letety break a J*Fa
+2026-06-28 20:21:00,302 - DEBUG - Processing frame 2700 at 90.00s
+2026-06-28 20:21:00,985 - DEBUG - Found text: Ifyou wanted t0 completety breek & t Make It tmnally 0284 AznL ,
+2026-06-28 20:21:01,043 - DEBUG - Processing frame 2760 at 92.00s
+2026-06-28 20:21:01,778 - DEBUG - Found text: WHAT CHEAT WOULD girinf; Atake It tnvaiy54n' Whal cheal wioulo
+2026-06-28 20:21:01,841 - DEBUG - Processing frame 2820 at 94.00s

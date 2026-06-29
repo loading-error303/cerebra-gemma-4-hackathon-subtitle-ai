@@ -206,15 +206,13 @@ class SubtitleTranslatorApp:
 
         def update_progress(value, timestamp=None):
             self.progress_var.set(value)
-            if value < 30:
+            if value < 60:
                 time_str = f" at {int(timestamp)}s" if timestamp is not None else ""
                 self.loading_status_var.set(f"Scanning video frames...{time_str}")
-            elif value < 60:
-                self.loading_status_var.set("Extracting subtitles via AI...")
             elif value < 90:
-                self.loading_status_var.set("Translating text...")
+                self.loading_status_var.set("Batch refining and translating with Gemma-4...")
             else:
-                self.loading_status_var.set("Merging final video...")
+                self.loading_status_var.set("Merging into final MKV...")
             self.root.update_idletasks()
 
         def task():
