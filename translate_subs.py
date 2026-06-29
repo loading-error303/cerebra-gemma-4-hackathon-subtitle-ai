@@ -135,14 +135,33 @@ def run_ocr_extraction(video_path, srt_path, progress_callback=None):
         timestamp = frame_count / fps if fps > 0 else 0
         log_step(f"Processing frame {frame_count} at {timestamp:.2f}s")
         
-        frame = cv2.resize(frame, (0, 0), fx=0.3, fy=0.3)
+        # PRE-PROCESSING FOR OCR ACCURACY
         grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        
+        # 1. Contrast Enhancement (CLAHE) to make text stand out from backgrounds
+        clahe = cv2.createCLAHE(clipLimit=2.0, tileGridSize=(8,8))
+        grey = clahe.apply(grey)
+        
         height, width = grey.shape[:2]
-        crop_img = grey[int(height * 0.85):height, 0:width]
+        # 2. Targeted Crop (Bottom 20% is where subtitles usually live)
+        crop_img = grey[int(height * 0.8):height, 0:width]
         
         try:
-            _, thresh = cv2.threshold(grey, 150, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-            results = reader.readtext(thresh)
+            # 3. Dual-Pass Thresholding: Try both Normal and Inverse
+            # Pass A: Binary Inverse (Best for white text on dark bg)
+            _, thresh_inv = cv2.threshold(crop_img, 0, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+            # Pass B: Binary Normal (Best for dark text on light bg)
+            _, thresh_norm = cv2.threshold(crop_img, 0, 255, cv2.THRESH_BINARY + cv2.THRESH_OTSU)
+            
+            # DEBUG: Save processed frames to see what OCR sees
+            cv2.imwrite(f"debug_frame_{frame_count}_inv.jpg", thresh_inv)
+            cv2.imwrite(f"debug_frame_{frame_count}_norm.jpg", thresh_norm)
+
+            res_inv = reader.readtext(thresh_inv)
+            res_norm = reader.readtext(thresh_norm)
+            
+            # Pick the result with more detected text
+            results = res_inv if len(res_inv) >= len(res_norm) else res_norm
             text = " ".join([res[1] for res in results])
             
             if text.strip():
