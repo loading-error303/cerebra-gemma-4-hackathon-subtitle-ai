@@ -107,7 +107,8 @@ def run_ocr_extraction(video_path, srt_path, progress_callback=None):
         log_step("OCR Reader not initialized. Failing.")
         return False
         
-    cap = cv2.VideoCapture(video_path)
+    # Use CAP_FFMPEG to attempt hardware acceleration if available
+    cap = cv2.VideoCapture(video_path, cv2.CAP_FFMPEG)
     if not cap.isOpened():
         log_step("Error: Could not open video file for OCR.")
         return False
@@ -116,49 +117,55 @@ def run_ocr_extraction(video_path, srt_path, progress_callback=None):
     total_frames = int(cap.get(cv2.CAP_PROP_FRAME_COUNT))
     log_step(f"Video opened. FPS: {fps}, Total Frames: {total_frames}")
     
-    # Scan every 2 seconds for even higher accuracy
     sample_rate = int(fps * 2) if fps > 0 else 60
     srt_entries = []
     frame_count = 0
     
     while cap.isOpened():
+        # FAST SKIP: Use cap.set(cv2.CAP_PROP_POS_FRAMES) to jump directly to the next sample
+        # This is much faster than reading every single frame and ignoring them
+        if frame_count > 0:
+            cap.set(cv2.CAP_PROP_POS_FRAMES, frame_count)
+            
         ret, frame = cap.read()
         if not ret:
             log_step("Reached end of video or read failed.")
             break
         
-        if frame_count % sample_rate == 0:
-            timestamp = frame_count / fps if fps > 0 else 0
-            log_step(f"Processing frame {frame_count} at {timestamp:.2f}s")
-            
-            frame = cv2.resize(frame, (0, 0), fx=0.3, fy=0.3)
-            grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-            height, width = grey.shape[:2]
-            crop_img = grey[int(height * 0.85):height, 0:width]
-            
-            try:
-                # IMPROVED PRE-PROCESSING FOR BETTER OCR
-                # 1. Convert to grayscale (already done)
-                # 2. Increase contrast and apply thresholding to make text pop
-                _, thresh = cv2.threshold(grey, 150, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
-                
-                # Use the thresholded image for OCR
-                results = reader.readtext(thresh)
-                text = " ".join([res[1] for res in results])
-                
-                if text.strip():
-                    log_step(f"Found text: {text}")
-                    start_t = format_timestamp(timestamp)
-                    end_t = format_timestamp(timestamp + 2)
-                    srt_entries.append(f"{len(srt_entries)+1}\n{start_t} --> {end_t}\n{text}\n\n")
-            except Exception as e:
-                log_step(f"OCR frame error: {e}")
-
-            if progress_callback:
-                # Pass the current timestamp to the callback
-                progress_callback((frame_count / total_frames) * 60, timestamp)
+        timestamp = frame_count / fps if fps > 0 else 0
+        log_step(f"Processing frame {frame_count} at {timestamp:.2f}s")
         
-        frame_count += 1
+        frame = cv2.resize(frame, (0, 0), fx=0.3, fy=0.3)
+        grey = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+        height, width = grey.shape[:2]
+        crop_img = grey[int(height * 0.85):height, 0:width]
+        
+        try:
+            _, thresh = cv2.threshold(grey, 150, 255, cv2.THRESH_BINARY_INV + cv2.THRESH_OTSU)
+            results = reader.readtext(thresh)
+            text = " ".join([res[1] for res in results])
+            
+            if text.strip():
+                log_step(f"Found text: {text}")
+                start_t = format_timestamp(timestamp)
+                end_t = format_timestamp(timestamp + 2)
+                srt_entries.append(f"{len(srt_entries)+1}\n{start_t} --> {end_t}\n{text}\n\n")
+        except Exception as e:
+            log_step(f"OCR frame error: {e}")
+
+        if progress_callback:
+            progress_callback((frame_count / total_frames) * 60, timestamp)
+        
+        frame_count += sample_rate
+    
+    cap.release()
+    log_step(f"OCR finished. Total entries found: {len(srt_entries)}")
+    if srt_entries:
+        with open(srt_path, 'w', encoding='utf-8') as f:
+            f.write("".join(srt_entries))
+        return True
+    return False
+
     
     cap.release()
     log_step(f"OCR finished. Total entries found: {len(srt_entries)}")
@@ -180,62 +187,44 @@ def translate_srt(input_srt, output_srt, target_lang='en', progress_callback=Non
         text = parts[i+1].strip() if i+1 < len(parts) else ""
         text_data.append({"id": i, "timestamp": timestamp, "text": text})
     
-    log_step(f"Batch processing {len(text_data)} lines...")
+    log_step(f"Batch processing {len(text_data)} lines with Gemma-4...")
 
-    # 1. BATCH AI REFINEMENT (Cerebras)
-    # Combine all lines into one prompt to reduce network overhead
-    raw_text_block = "\n".join([f"Line {item['id']}: {item['text']}" for item in text_data if item['text']])
-    
-    refined_map = {}
-    if raw_text_block:
-        try:
-            # Prompt Gemma to return the exact same format (Line X: Text)
-            response = client.chat.completions.create(
-                model="gemma-4-31b",
-                messages=[
-                    {"role": "system", "content": "You are a text correction expert. I will give you a list of numbered lines of messy OCR text. Fix the typos and grammar for each line. Return the result in the EXACT same format: 'Line X: corrected text'. Do not add any other text."},
-                    {"role": "user", "content": raw_text_block}
-                ],
-                temperature=0.1
-            )
-            refined_output = response.choices[0].message.content.strip()
-            # Parse the returned lines back into the map
-            for line in refined_output.split('\n'):
-                if ':' in line:
-                    try:
-                        idx_part, text_part = line.split(':', 1)
-                        idx = int(re.search(r'\d+', idx_part).group())
-                        refined_map[idx] = text_part.strip()
-                    except:
-                        continue
-        except Exception as e:
-            log_step(f"Batch AI Refinement failed: {e}")
-
-    # 2. BATCH TRANSLATION (Google Translator)
-    # GoogleTranslator can take a list of strings
-    texts_to_translate = []
-    indices = []
-    for item in text_data:
-        text = refined_map.get(item['id'], item['text']) if item['text'] else ""
-        if text:
-            texts_to_translate.append(text)
-            indices.append(item['id'])
-
+    # BATCH AI REFINEMENT AND TRANSLATION (Combined into one call)
     translated_map = {}
-    if texts_to_translate:
-        try:
-            # Batch translate everything in one go
-            translations = GoogleTranslator(source='auto', target=target_lang).translate_batch(texts_to_translate)
-            for idx, trans_text in zip(indices, translations):
-                translated_map[idx] = trans_text
-        except Exception as e:
-            log_step(f"Batch Translation failed: {e}")
+    if text_data:
+        # Combine all lines into one prompt
+        raw_text_block = "\n".join([f"Line {item['id']}: {item['text']}" for item in text_data if item['text']])
+        
+        if raw_text_block:
+            try:
+                response = client.chat.completions.create(
+                    model="gemma-4-31b",
+                    messages=[
+                        {"role": "system", "content": f"You are a professional translator. I will give you a list of numbered lines of messy OCR text. First, fix the typos and grammar in English, then translate the corrected text into {target_lang}. Return the result in the EXACT same format: 'Line X: translated text'. Do not add any other text or explanations."},
+                        {"role": "user", "content": raw_text_block}
+                    ],
+                    temperature=0.1
+                )
+                refined_translated_output = response.choices[0].message.content.strip()
+                
+                # Parse the returned lines back into the map
+                for line in refined_translated_output.split('\n'):
+                    if ':' in line:
+                        try:
+                            idx_part, text_part = line.split(':', 1)
+                            idx = int(re.search(r'\d+', idx_part).group())
+                            translated_map[idx] = text_part.strip()
+                        except:
+                            continue
+            except Exception as e:
+                log_step(f"Gemma-4 Batch Translation failed: {e}")
 
-    # 3. Reconstruct the SRT
+    # Reconstruct the SRT
     translated_content = []
     for i in range(1, len(parts), 2):
         timestamp = parts[i]
-        text = translated_map.get(i, refined_map.get(i, parts[i+1].strip() if i+1 < len(parts) else ""))
+        # Fallback: use the translated text, or if that failed, the original text
+        text = translated_map.get(i, parts[i+1].strip() if i+1 < len(parts) else "")
         translated_content.append(f"{timestamp}\n{text}\n\n")
         if progress_callback:
             progress_callback(60 + ( (i/len(parts)) * 30))

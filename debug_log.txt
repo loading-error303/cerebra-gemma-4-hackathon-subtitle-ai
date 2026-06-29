@@ -5778,3 +5778,252 @@ For more information check: https://developer.mozilla.org/en-US/docs/Web/HTTP/St
 2026-06-28 19:53:49,085 - DEBUG - close.complete
 2026-06-28 19:53:49,085 - DEBUG - close.started
 2026-06-28 19:53:49,085 - DEBUG - close.complete
+2026-06-28 19:58:16,158 - DEBUG - Initializing OCR reader with GPU support...
+2026-06-28 19:58:16,159 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2026-06-28 19:58:17,403 - DEBUG - OCR reader initialized successfully on GPU.
+2026-06-28 19:58:17,403 - DEBUG - Checking for embedded subtitles in C:\Users\karna\Videos\Screen Recordings\30_sec_vid.mp4...
+2026-06-28 19:58:17,469 - DEBUG - No embedded subtitles found. Switching to OCR mode...
+2026-06-28 19:58:17,469 - DEBUG - Starting OCR extraction...
+2026-06-28 19:58:17,502 - DEBUG - Video opened. FPS: 30.017798466593646, Total Frames: 877
+2026-06-28 19:58:17,542 - DEBUG - Processing frame 0 at 0.00s
+2026-06-28 19:58:18,191 - DEBUG - Found text: You know what's kind of weird?
+2026-06-28 19:58:18,707 - DEBUG - Processing frame 60 at 2.00s
+2026-06-28 19:58:19,341 - DEBUG - Found text: t 'What kind of games do you Iike?"
+2026-06-28 19:58:19,833 - DEBUG - Processing frame 120 at 4.00s
+2026-06-28 19:58:20,616 - DEBUG - Found text: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb
+2026-06-28 19:58:21,109 - DEBUG - Processing frame 180 at 6.00s
+2026-06-28 19:58:21,800 - DEBUG - Found text: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters
+2026-06-28 19:58:22,284 - DEBUG - Processing frame 240 at 8.00s
+2026-06-28 19:58:22,905 - DEBUG - Found text: Yousav tactica shontels and they rspono @n 50-
+2026-06-28 19:58:23,405 - DEBUG - Processing frame 300 at 9.99s
+2026-06-28 19:58:24,079 - DEBUG - Found text: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and
+2026-06-28 19:58:24,590 - DEBUG - Processing frame 360 at 11.99s
+2026-06-28 19:58:25,234 - DEBUG - Found text: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,
+2026-06-28 19:58:25,745 - DEBUG - Processing frame 420 at 13.99s
+2026-06-28 19:58:26,397 - DEBUG - Found text: F VALORANT And You acwalv only 3f9
+2026-06-28 19:58:26,904 - DEBUG - Processing frame 480 at 15.99s
+2026-06-28 19:58:27,543 - DEBUG - Found text: "Strategy Games" acvaIy Gniy Counter-Siike strleq
+2026-06-28 19:58:28,055 - DEBUG - Processing frame 540 at 17.99s
+2026-06-28 19:58:29,099 - DEBUG - Found text: 'Dude, you @ptta try Glv one ot ttone gamed that'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;
+2026-06-28 19:58:29,535 - DEBUG - Processing frame 600 at 19.99s
+2026-06-28 19:58:30,289 - DEBUG - Found text: Every gam sometime sometime It's just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like
+2026-06-28 19:58:30,737 - DEBUG - Processing frame 660 at 21.99s
+2026-06-28 19:58:31,339 - DEBUG - Found text: somethlng more hke Hearthstone; Game dent85 3ie"
+2026-06-28 19:58:31,796 - DEBUG - Processing frame 720 at 23.99s
+2026-06-28 19:58:32,418 - DEBUG - Found text: somethlng more lke Hearthstone; Game gent85 are kind of bnken_
+2026-06-28 19:58:32,909 - DEBUG - Processing frame 780 at 25.98s
+2026-06-28 19:58:33,518 - DEBUG - Found text: Blrt | thlrsk there & better %ayto think abdul thiz
+2026-06-28 19:58:34,032 - DEBUG - Processing frame 840 at 27.98s
+2026-06-28 19:58:34,657 - DEBUG - Found text: thlk about Ihls, And Its a much Bimplet quat" lodt a
+2026-06-28 19:58:34,914 - DEBUG - Reached end of video or read failed.
+2026-06-28 19:58:34,930 - DEBUG - OCR finished. Total entries found: 15
+2026-06-28 19:58:34,932 - DEBUG - Batch processing 15 lines...
+2026-06-28 19:58:35,289 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-b8920413-496b-4f08-a55a-d399b905b39f', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': "You are a text correction expert. I will give you a list of numbered lines of messy OCR text. Fix the typos and grammar for each line. Return the result in the EXACT same format: 'Line X: corrected text'. Do not add any other text."}, {'role': 'user', 'content': 'Line 1: You know what\'s kind of weird?\nLine 3: t \'What kind of games do you Iike?"\nLine 5: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb\nLine 7: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters\nLine 9: Yousav tactica shontels and they rspono @n 50-\nLine 11: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and\nLine 13: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,\nLine 15: F VALORANT And You acwalv only 3f9\nLine 17: "Strategy Games" acvaIy Gniy Counter-Siike strleq\nLine 19: \'Dude, you @ptta try Glv one ot ttone gamed that\'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;\nLine 21: Every gam sometime sometime It\'s just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like\nLine 23: somethlng more hke Hearthstone; Game dent85 3ie"\nLine 25: somethlng more lke Hearthstone; Game gent85 are kind of bnken_\nLine 27: Blrt | thlrsk there & better %ayto think abdul thiz\nLine 29: thlk about Ihls, And Its a much Bimplet quat" lodt a'}], 'model': 'gemma-4-31b', 'temperature': 0.1}}
+2026-06-28 19:58:35,309 - DEBUG - Sending HTTP Request: POST https://api.cerebras.ai/v1/chat/completions
+2026-06-28 19:58:35,310 - DEBUG - connect_tcp.started host='api.cerebras.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-06-28 19:58:35,329 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E7AEBE6660>
+2026-06-28 19:58:35,329 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001E784A32990> server_hostname='api.cerebras.ai' timeout=5.0
+2026-06-28 19:58:35,335 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001E7AECA0190>
+2026-06-28 19:58:35,335 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-06-28 19:58:35,335 - DEBUG - send_request_headers.complete
+2026-06-28 19:58:35,335 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-06-28 19:58:35,335 - DEBUG - send_request_body.complete
+2026-06-28 19:58:35,336 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-06-28 19:58:35,846 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 29 Jun 2026 02:58:36 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'set-cookie', b'__cf_bm=d_F6AvbNTBeNHggmXxRY7sMxc4.Wl3jESZxhUKNcJrk-1782701915.717126-1.0.1.1-Oy_9mtZiRPRJno5dqSJASQJ4Ga4LAlKLOrzR0jotpqLlYKiTEOXPXvXPvGUAgW2gZvWF2dTH7KKLMGoVq3Q206KwCZIfxi8zvqXKni4STTcTv_Q79IEGVLGHLO9QHShF; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:28:36 GMT'), (b'Server', b'cloudflare'), (b'x-request-id', b'a131ab9d38c7de1d-CMH'), (b'x-ratelimit-remaining-requests-minute', b'99'), (b'x-ratelimit-remaining-requests-hour', b'5999'), (b'x-ratelimit-remaining-requests-day', b'143999'), (b'x-ratelimit-remaining-tokens-minute', b'83233'), (b'x-ratelimit-remaining-tokens-hour', b'5983233'), (b'x-ratelimit-remaining-tokens-day', b'143983233'), (b'x-ratelimit-limit-requests-minute', b'100'), (b'x-ratelimit-limit-requests-hour', b'6000'), (b'x-ratelimit-limit-requests-day', b'144000'), (b'x-ratelimit-limit-tokens-minute', b'100000'), (b'x-ratelimit-limit-tokens-hour', b'6000000'), (b'x-ratelimit-limit-tokens-day', b'144000000'), (b'inference-id', b'chatcmpl-589e38e0-2e67-4e91-8a4d-7b12b6885e1e'), (b'referrer-policy', b'strict-origin-when-cross-origin'), (b'x-content-type-options', b'nosniff'), (b'strict-transport-security', b'max-age=15552000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a131ab9d38c7de1d-PDX'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-06-28 19:58:35,847 - INFO - HTTP Request: POST https://api.cerebras.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 19:58:35,847 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-06-28 19:58:35,847 - DEBUG - receive_response_body.complete
+2026-06-28 19:58:35,847 - DEBUG - response_closed.started
+2026-06-28 19:58:35,847 - DEBUG - response_closed.complete
+2026-06-28 19:58:35,847 - DEBUG - HTTP Response: POST https://api.cerebras.ai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 29 Jun 2026 02:58:36 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'set-cookie': '__cf_bm=d_F6AvbNTBeNHggmXxRY7sMxc4.Wl3jESZxhUKNcJrk-1782701915.717126-1.0.1.1-Oy_9mtZiRPRJno5dqSJASQJ4Ga4LAlKLOrzR0jotpqLlYKiTEOXPXvXPvGUAgW2gZvWF2dTH7KKLMGoVq3Q206KwCZIfxi8zvqXKni4STTcTv_Q79IEGVLGHLO9QHShF; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:28:36 GMT', 'server': 'cloudflare', 'x-request-id': 'a131ab9d38c7de1d-CMH', 'x-ratelimit-remaining-requests-minute': '99', 'x-ratelimit-remaining-requests-hour': '5999', 'x-ratelimit-remaining-requests-day': '143999', 'x-ratelimit-remaining-tokens-minute': '83233', 'x-ratelimit-remaining-tokens-hour': '5983233', 'x-ratelimit-remaining-tokens-day': '143983233', 'x-ratelimit-limit-requests-minute': '100', 'x-ratelimit-limit-requests-hour': '6000', 'x-ratelimit-limit-requests-day': '144000', 'x-ratelimit-limit-tokens-minute': '100000', 'x-ratelimit-limit-tokens-hour': '6000000', 'x-ratelimit-limit-tokens-day': '144000000', 'inference-id': 'chatcmpl-589e38e0-2e67-4e91-8a4d-7b12b6885e1e', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-content-type-options': 'nosniff', 'strict-transport-security': 'max-age=15552000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'content-encoding': 'gzip', 'cf-ray': 'a131ab9d38c7de1d-PDX', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-06-28 19:58:35,847 - DEBUG - request_id: a131ab9d38c7de1d-CMH
+2026-06-28 19:58:35,854 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:36,082 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=You+know+what%27s+kind+of+weird%3F HTTP/1.1" 200 None
+2026-06-28 19:58:36,139 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:36,353 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22What+kind+of+games+do+you+like%3F%22 HTTP/1.1" 200 None
+2026-06-28 19:58:36,400 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:36,607 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=When+someone+asks+what+kind+of+games+you+like%2C+most+people+struggle+to+answer. HTTP/1.1" 200 None
+2026-06-28 19:58:37,130 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:37,349 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22Tactical+Shooters%2C%22+like...+most+people+struggle+to+answer.+You+say+tactical+shooters%2C HTTP/1.1" 200 None
+2026-06-28 19:58:37,873 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:38,082 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=You+say+tactical+shooters+and+they+respond+with%2C HTTP/1.1" 200 None
+2026-06-28 19:58:38,441 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:38,645 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22You+must+like+VALORANT%2C%22+or+%22Oh%2C+so+you+must+like+Counter-Strike%2C+Valorant%2C+and HTTP/1.1" 200 None
+2026-06-28 19:58:39,329 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:39,530 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=Counter-Strike%2C+Valorant%2C+and+Rainbow+Six+Siege.+And+you... HTTP/1.1" 200 None
+2026-06-28 19:58:40,748 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:40,952 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=VALORANT%2C+and+you+actually+only+like HTTP/1.1" 200 None
+2026-06-28 19:58:41,907 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:42,111 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22Strategy+Games%2C%22+actually+only+Counter-Strike+strategy. HTTP/1.1" 200 None
+2026-06-28 19:58:42,480 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:42,688 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22Dude%2C+you+gotta+try+Civ%2C+one+of+those+games+that%27s+way+more+fun+than+it+looks.+You+start+with+basically+nothing+and+slowly+build+up+this+huge+civilization+and+before+you+know+it%2C+you%27re+completely+hooked.+Every+game+feels+different%2C+too.+Sometimes+you+strategy...+and+someone+recommended+WoW%2C+Civilization%2C+Vanic...%22 HTTP/1.1" 200 None
+2026-06-28 19:58:43,495 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:43,701 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=Every+game+is+sometimes...+and+some...+what+like...+and+then+you+have+Civilization+when+you+wanted+something+more+like HTTP/1.1" 200 None
+2026-06-28 19:58:44,300 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:44,501 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=something+more+like+Hearthstone%3B+game+genres+are... HTTP/1.1" 200 None
+2026-06-28 19:58:45,306 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:45,526 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=something+more+like+Hearthstone%3B+game+genres+are+kind+of+broken. HTTP/1.1" 200 None
+2026-06-28 19:58:46,407 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:46,613 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=But+I+think+there+is+a+better+way+to+think+about+this. HTTP/1.1" 200 None
+2026-06-28 19:58:47,205 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 19:58:47,412 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=Think+about+this%2C+and+it%27s+a+much+simpler+question. HTTP/1.1" 200 None
+2026-06-28 19:58:47,470 - DEBUG - Merging subtitles into C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv...
+2026-06-28 19:58:47,595 - DEBUG - Merge successful! Saved as C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv
+2026-06-28 19:58:47,839 - DEBUG - close.started
+2026-06-28 19:58:47,839 - DEBUG - close.complete
+2026-06-28 20:06:35,731 - DEBUG - Initializing OCR reader with GPU support...
+2026-06-28 20:06:35,732 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2026-06-28 20:06:37,029 - DEBUG - OCR reader initialized successfully on GPU.
+2026-06-28 20:06:37,029 - DEBUG - Checking for embedded subtitles in C:\Users\karna\Videos\Screen Recordings\30_sec_vid.mp4...
+2026-06-28 20:06:37,098 - DEBUG - No embedded subtitles found. Switching to OCR mode...
+2026-06-28 20:06:37,098 - DEBUG - Starting OCR extraction...
+2026-06-28 20:06:37,132 - DEBUG - Video opened. FPS: 30.017798466593646, Total Frames: 877
+2026-06-28 20:06:37,172 - DEBUG - Processing frame 0 at 0.00s
+2026-06-28 20:06:37,881 - DEBUG - Found text: You know what's kind of weird?
+2026-06-28 20:06:37,931 - DEBUG - Processing frame 60 at 2.00s
+2026-06-28 20:06:38,538 - DEBUG - Found text: t 'What kind of games do you Iike?"
+2026-06-28 20:06:38,591 - DEBUG - Processing frame 120 at 4.00s
+2026-06-28 20:06:39,425 - DEBUG - Found text: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb
+2026-06-28 20:06:39,473 - DEBUG - Processing frame 180 at 6.00s
+2026-06-28 20:06:40,145 - DEBUG - Found text: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters
+2026-06-28 20:06:40,193 - DEBUG - Processing frame 240 at 8.00s
+2026-06-28 20:06:40,819 - DEBUG - Found text: Yousav tactica shontels and they rspono @n 50-
+2026-06-28 20:06:40,872 - DEBUG - Processing frame 300 at 9.99s
+2026-06-28 20:06:41,560 - DEBUG - Found text: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and
+2026-06-28 20:06:41,607 - DEBUG - Processing frame 360 at 11.99s
+2026-06-28 20:06:42,249 - DEBUG - Found text: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,
+2026-06-28 20:06:42,300 - DEBUG - Processing frame 420 at 13.99s
+2026-06-28 20:06:42,935 - DEBUG - Found text: F VALORANT And You acwalv only 3f9
+2026-06-28 20:06:42,986 - DEBUG - Processing frame 480 at 15.99s
+2026-06-28 20:06:43,632 - DEBUG - Found text: "Strategy Games" acvaIy Gniy Counter-Siike strleq
+2026-06-28 20:06:43,698 - DEBUG - Processing frame 540 at 17.99s
+2026-06-28 20:06:44,744 - DEBUG - Found text: 'Dude, you @ptta try Glv one ot ttone gamed that'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;
+2026-06-28 20:06:44,806 - DEBUG - Processing frame 600 at 19.99s
+2026-06-28 20:06:45,565 - DEBUG - Found text: Every gam sometime sometime It's just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like
+2026-06-28 20:06:45,612 - DEBUG - Processing frame 660 at 21.99s
+2026-06-28 20:06:46,203 - DEBUG - Found text: somethlng more hke Hearthstone; Game dent85 3ie"
+2026-06-28 20:06:46,249 - DEBUG - Processing frame 720 at 23.99s
+2026-06-28 20:06:46,874 - DEBUG - Found text: somethlng more lke Hearthstone; Game gent85 are kind of bnken_
+2026-06-28 20:06:46,917 - DEBUG - Processing frame 780 at 25.98s
+2026-06-28 20:06:47,526 - DEBUG - Found text: Blrt | thlrsk there & better %ayto think abdul thiz
+2026-06-28 20:06:47,577 - DEBUG - Processing frame 840 at 27.98s
+2026-06-28 20:06:48,184 - DEBUG - Found text: thlk about Ihls, And Its a much Bimplet quat" lodt a
+2026-06-28 20:06:48,238 - DEBUG - Reached end of video or read failed.
+2026-06-28 20:06:48,254 - DEBUG - OCR finished. Total entries found: 15
+2026-06-28 20:06:48,256 - DEBUG - Batch processing 15 lines...
+2026-06-28 20:06:48,657 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-71a7fb80-b415-4eaf-a378-01e538cab351', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': "You are a text correction expert. I will give you a list of numbered lines of messy OCR text. Fix the typos and grammar for each line. Return the result in the EXACT same format: 'Line X: corrected text'. Do not add any other text."}, {'role': 'user', 'content': 'Line 1: You know what\'s kind of weird?\nLine 3: t \'What kind of games do you Iike?"\nLine 5: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb\nLine 7: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters\nLine 9: Yousav tactica shontels and they rspono @n 50-\nLine 11: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and\nLine 13: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,\nLine 15: F VALORANT And You acwalv only 3f9\nLine 17: "Strategy Games" acvaIy Gniy Counter-Siike strleq\nLine 19: \'Dude, you @ptta try Glv one ot ttone gamed that\'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;\nLine 21: Every gam sometime sometime It\'s just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like\nLine 23: somethlng more hke Hearthstone; Game dent85 3ie"\nLine 25: somethlng more lke Hearthstone; Game gent85 are kind of bnken_\nLine 27: Blrt | thlrsk there & better %ayto think abdul thiz\nLine 29: thlk about Ihls, And Its a much Bimplet quat" lodt a'}], 'model': 'gemma-4-31b', 'temperature': 0.1}}
+2026-06-28 20:06:48,678 - DEBUG - Sending HTTP Request: POST https://api.cerebras.ai/v1/chat/completions
+2026-06-28 20:06:48,679 - DEBUG - connect_tcp.started host='api.cerebras.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-06-28 20:06:48,684 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000124BC162660>
+2026-06-28 20:06:48,684 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x0000012491FA6990> server_hostname='api.cerebras.ai' timeout=5.0
+2026-06-28 20:06:48,688 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x00000124BC220190>
+2026-06-28 20:06:48,688 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-06-28 20:06:48,689 - DEBUG - send_request_headers.complete
+2026-06-28 20:06:48,689 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-06-28 20:06:48,689 - DEBUG - send_request_body.complete
+2026-06-28 20:06:48,689 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-06-28 20:06:49,359 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 29 Jun 2026 03:06:49 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Server', b'cloudflare'), (b'x-request-id', b'a131b7a8cb02054d-PDX'), (b'x-ratelimit-remaining-requests-minute', b'99'), (b'x-ratelimit-remaining-requests-hour', b'5999'), (b'x-ratelimit-remaining-requests-day', b'143999'), (b'x-ratelimit-remaining-tokens-minute', b'83233'), (b'x-ratelimit-remaining-tokens-hour', b'5983233'), (b'x-ratelimit-remaining-tokens-day', b'143983233'), (b'x-ratelimit-limit-requests-minute', b'100'), (b'x-ratelimit-limit-requests-hour', b'6000'), (b'x-ratelimit-limit-requests-day', b'144000'), (b'x-ratelimit-limit-tokens-minute', b'100000'), (b'x-ratelimit-limit-tokens-hour', b'6000000'), (b'x-ratelimit-limit-tokens-day', b'144000000'), (b'inference-id', b'chatcmpl-2487bb77-a729-4872-97b7-488a3190f5f7'), (b'referrer-policy', b'strict-origin-when-cross-origin'), (b'x-content-type-options', b'nosniff'), (b'strict-transport-security', b'max-age=15552000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=HABzE5L9CneBTIPpUlTym9A8hNUMPz4aWBGVDWjdBRI-1782702409.0900817-1.0.1.1-Klu6zyPUWGOcqXoOA3PsLz4co0Eq8_N3tDv0_4zk3rDEIRqVp.mQFz8QSLIfwVAqWuF5hzOOP__RsgVhMl3ySahJPPE_yZPCmZ8T9LkDH2N3DLQIjyyb6Yufs3oVlLXx; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:36:49 GMT'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a131b7a8cb02054d-PDX'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-06-28 20:06:49,360 - INFO - HTTP Request: POST https://api.cerebras.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 20:06:49,360 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-06-28 20:06:49,360 - DEBUG - receive_response_body.complete
+2026-06-28 20:06:49,360 - DEBUG - response_closed.started
+2026-06-28 20:06:49,360 - DEBUG - response_closed.complete
+2026-06-28 20:06:49,360 - DEBUG - HTTP Response: POST https://api.cerebras.ai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 29 Jun 2026 03:06:49 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'server': 'cloudflare', 'x-request-id': 'a131b7a8cb02054d-PDX', 'x-ratelimit-remaining-requests-minute': '99', 'x-ratelimit-remaining-requests-hour': '5999', 'x-ratelimit-remaining-requests-day': '143999', 'x-ratelimit-remaining-tokens-minute': '83233', 'x-ratelimit-remaining-tokens-hour': '5983233', 'x-ratelimit-remaining-tokens-day': '143983233', 'x-ratelimit-limit-requests-minute': '100', 'x-ratelimit-limit-requests-hour': '6000', 'x-ratelimit-limit-requests-day': '144000', 'x-ratelimit-limit-tokens-minute': '100000', 'x-ratelimit-limit-tokens-hour': '6000000', 'x-ratelimit-limit-tokens-day': '144000000', 'inference-id': 'chatcmpl-2487bb77-a729-4872-97b7-488a3190f5f7', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-content-type-options': 'nosniff', 'strict-transport-security': 'max-age=15552000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=HABzE5L9CneBTIPpUlTym9A8hNUMPz4aWBGVDWjdBRI-1782702409.0900817-1.0.1.1-Klu6zyPUWGOcqXoOA3PsLz4co0Eq8_N3tDv0_4zk3rDEIRqVp.mQFz8QSLIfwVAqWuF5hzOOP__RsgVhMl3ySahJPPE_yZPCmZ8T9LkDH2N3DLQIjyyb6Yufs3oVlLXx; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:36:49 GMT', 'content-encoding': 'gzip', 'cf-ray': 'a131b7a8cb02054d-PDX', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-06-28 20:06:49,360 - DEBUG - request_id: a131b7a8cb02054d-PDX
+2026-06-28 20:06:49,366 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:49,575 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=You+know+what%27s+kind+of+weird%3F HTTP/1.1" 200 None
+2026-06-28 20:06:49,713 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:49,921 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22What+kind+of+games+do+you+like%3F%22 HTTP/1.1" 200 None
+2026-06-28 20:06:49,998 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:50,210 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=When+someone+asks+what+kind+of+games+you+like%2C+most+people+struggle+to+answer. HTTP/1.1" 200 None
+2026-06-28 20:06:50,281 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:50,497 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22Tactical+Shooters%2C%22+like...+most+people+struggle+to+answer.+You+say+tactical+shooters%2C HTTP/1.1" 200 None
+2026-06-28 20:06:50,561 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:50,774 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=you+say+tactical+shooters+and+they+respond+with%2C HTTP/1.1" 200 None
+2026-06-28 20:06:51,770 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:51,973 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22You+must+like+VALORANT%2C%22+or+respond%2C+%22Oh%2C+so+you+must+like+Counter-Strike%2C+Valorant%2C+and HTTP/1.1" 200 None
+2026-06-28 20:06:52,181 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:52,394 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=Counter-Strike%2C+Valorant%2C+and+Rainbow+Six+Siege.+And+you...%22 HTTP/1.1" 200 None
+2026-06-28 20:06:52,464 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:52,671 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=VALORANT%2C+and+you+actually+only+say%2C HTTP/1.1" 200 None
+2026-06-28 20:06:53,935 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:54,139 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22Strategy+Games%2C%22+actually+only+Counter-Strike+strategy... HTTP/1.1" 200 None
+2026-06-28 20:06:54,691 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:54,895 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=%22Dude%2C+you+gotta+try+Civ%2C+one+of+those+games+that%27s+way+more+fun+than+it+looks.+You+start+with+basically+nothing+and+slowly+build+up+this+huge+civilization+and+before+you+know+it%2C+you%27re+completely+hooked.+Every+game+feels+different%2C+too.+Sometimes+you+strategy...+and+someone+recommended+WoW%2C+Civilization%2C+Vanic...%22 HTTP/1.1" 200 None
+2026-06-28 20:06:55,018 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:55,222 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=Every+game%2C+sometimes+it%27s+just...+and+some...+what+like...+and+then+you+Civilization%2C+when+you+wanted+something+more+like HTTP/1.1" 200 None
+2026-06-28 20:06:55,627 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:55,835 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=something+more+like+Hearthstone%3B+game+genres+are... HTTP/1.1" 200 None
+2026-06-28 20:06:55,925 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:56,136 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=something+more+like+Hearthstone%3B+game+genres+are+kind+of+broken. HTTP/1.1" 200 None
+2026-06-28 20:06:56,236 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:56,443 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=But+I+think+there+is+a+better+way+to+think+about+this. HTTP/1.1" 200 None
+2026-06-28 20:06:56,509 - DEBUG - Starting new HTTPS connection (1): translate.google.com:443
+2026-06-28 20:06:56,731 - DEBUG - https://translate.google.com:443 "GET /m?tl=ar&sl=auto&q=Think+about+this%2C+and+it%27s+a+much+simpler+question.+Just+a... HTTP/1.1" 200 None
+2026-06-28 20:06:56,819 - DEBUG - Merging subtitles into C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv...
+2026-06-28 20:06:56,945 - DEBUG - Merge successful! Saved as C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv
+2026-06-28 20:06:57,207 - DEBUG - close.started
+2026-06-28 20:06:57,207 - DEBUG - close.complete
+2026-06-28 20:08:53,868 - DEBUG - Initializing OCR reader with GPU support...
+2026-06-28 20:08:53,869 - WARNING - Neither CUDA nor MPS are available - defaulting to CPU. Note: This module is much faster with a GPU.
+2026-06-28 20:08:55,162 - DEBUG - OCR reader initialized successfully on GPU.
+2026-06-28 20:08:55,162 - DEBUG - Checking for embedded subtitles in C:\Users\karna\Videos\Screen Recordings\30_sec_vid.mp4...
+2026-06-28 20:08:55,243 - DEBUG - No embedded subtitles found. Switching to OCR mode...
+2026-06-28 20:08:55,243 - DEBUG - Starting OCR extraction...
+2026-06-28 20:08:55,278 - DEBUG - Video opened. FPS: 30.017798466593646, Total Frames: 877
+2026-06-28 20:08:55,317 - DEBUG - Processing frame 0 at 0.00s
+2026-06-28 20:08:56,015 - DEBUG - Found text: You know what's kind of weird?
+2026-06-28 20:08:56,064 - DEBUG - Processing frame 60 at 2.00s
+2026-06-28 20:08:56,717 - DEBUG - Found text: t 'What kind of games do you Iike?"
+2026-06-28 20:08:56,767 - DEBUG - Processing frame 120 at 4.00s
+2026-06-28 20:08:57,581 - DEBUG - Found text: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb
+2026-06-28 20:08:57,632 - DEBUG - Processing frame 180 at 6.00s
+2026-06-28 20:08:58,326 - DEBUG - Found text: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters
+2026-06-28 20:08:58,376 - DEBUG - Processing frame 240 at 8.00s
+2026-06-28 20:08:59,013 - DEBUG - Found text: Yousav tactica shontels and they rspono @n 50-
+2026-06-28 20:08:59,066 - DEBUG - Processing frame 300 at 9.99s
+2026-06-28 20:08:59,746 - DEBUG - Found text: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and
+2026-06-28 20:08:59,798 - DEBUG - Processing frame 360 at 11.99s
+2026-06-28 20:09:00,464 - DEBUG - Found text: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,
+2026-06-28 20:09:00,518 - DEBUG - Processing frame 420 at 13.99s
+2026-06-28 20:09:01,158 - DEBUG - Found text: F VALORANT And You acwalv only 3f9
+2026-06-28 20:09:01,210 - DEBUG - Processing frame 480 at 15.99s
+2026-06-28 20:09:01,845 - DEBUG - Found text: "Strategy Games" acvaIy Gniy Counter-Siike strleq
+2026-06-28 20:09:01,915 - DEBUG - Processing frame 540 at 17.99s
+2026-06-28 20:09:02,974 - DEBUG - Found text: 'Dude, you @ptta try Glv one ot ttone gamed that'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;
+2026-06-28 20:09:03,038 - DEBUG - Processing frame 600 at 19.99s
+2026-06-28 20:09:03,805 - DEBUG - Found text: Every gam sometime sometime It's just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like
+2026-06-28 20:09:03,855 - DEBUG - Processing frame 660 at 21.99s
+2026-06-28 20:09:04,474 - DEBUG - Found text: somethlng more hke Hearthstone; Game dent85 3ie"
+2026-06-28 20:09:04,523 - DEBUG - Processing frame 720 at 23.99s
+2026-06-28 20:09:05,164 - DEBUG - Found text: somethlng more lke Hearthstone; Game gent85 are kind of bnken_
+2026-06-28 20:09:05,211 - DEBUG - Processing frame 780 at 25.98s
+2026-06-28 20:09:05,838 - DEBUG - Found text: Blrt | thlrsk there & better %ayto think abdul thiz
+2026-06-28 20:09:05,892 - DEBUG - Processing frame 840 at 27.98s
+2026-06-28 20:09:06,520 - DEBUG - Found text: thlk about Ihls, And Its a much Bimplet quat" lodt a
+2026-06-28 20:09:06,576 - DEBUG - Reached end of video or read failed.
+2026-06-28 20:09:06,593 - DEBUG - OCR finished. Total entries found: 15
+2026-06-28 20:09:06,595 - DEBUG - Batch processing 15 lines with Gemma-4...
+2026-06-28 20:09:06,967 - DEBUG - Request options: {'method': 'post', 'url': '/chat/completions', 'files': None, 'idempotency_key': 'stainless-python-retry-e6534d1d-1c94-49d3-82a0-0a810dc960d7', 'security': {'bearer_auth': True}, 'content': None, 'json_data': {'messages': [{'role': 'system', 'content': "You are a professional translator. I will give you a list of numbered lines of messy OCR text. First, fix the typos and grammar in English, then translate the corrected text into ar. Return the result in the EXACT same format: 'Line X: translated text'. Do not add any other text or explanations."}, {'role': 'user', 'content': 'Line 1: You know what\'s kind of weird?\nLine 3: t \'What kind of games do you Iike?"\nLine 5: t Tottn English (aulo gcnctalcd} Click Bettingg someone asks #hal kind qames %0 vqu most people alruggla 3nsivb\nLine 7: "Tactical Shooters" Ilke; most people slruggle A4nSlyfi Tou say tactic1 shaoters\nLine 9: Yousav tactica shontels and they rspono @n 50-\nLine 11: "You must Iike _ VALORANT [esnono "Oh s0 yl must Ilke Counler-Strike; Valorant and\nLine 13: Coxmk-Stnke valorant and Rabbow Sk Sibqe And Yu 230,\nLine 15: F VALORANT And You acwalv only 3f9\nLine 17: "Strategy Games" acvaIy Gniy Counter-Siike strleq\nLine 19: \'Dude, you @ptta try Glv one ot ttone gamed that\'g way more tun than it to4nda_ You gtert with busicelly nothing and glowly build up thia huge civilization and bafore you know it you re completely hooked_ Evary &ama faola dlffarant, too gomatimod You straley_ and someone ecomnmetdf VOV Ciyilcation Vanic;\nLine 21: Every gam sometime sometime It\'s just re And some What like and then I yau Clvllzatlon %hen YOu wianted something more like\nLine 23: somethlng more hke Hearthstone; Game dent85 3ie"\nLine 25: somethlng more lke Hearthstone; Game gent85 are kind of bnken_\nLine 27: Blrt | thlrsk there & better %ayto think abdul thiz\nLine 29: thlk about Ihls, And Its a much Bimplet quat" lodt a'}], 'model': 'gemma-4-31b', 'temperature': 0.1}}
+2026-06-28 20:09:06,988 - DEBUG - Sending HTTP Request: POST https://api.cerebras.ai/v1/chat/completions
+2026-06-28 20:09:06,988 - DEBUG - connect_tcp.started host='api.cerebras.ai' port=443 local_address=None timeout=5.0 socket_options=None
+2026-06-28 20:09:07,014 - DEBUG - connect_tcp.complete return_value=<httpcore._backends.sync.SyncStream object at 0x000001540534A510>
+2026-06-28 20:09:07,014 - DEBUG - start_tls.started ssl_context=<ssl.SSLContext object at 0x000001545AE3EA30> server_hostname='api.cerebras.ai' timeout=5.0
+2026-06-28 20:09:07,019 - DEBUG - start_tls.complete return_value=<httpcore._backends.sync.SyncStream object at 0x0000015405420050>
+2026-06-28 20:09:07,019 - DEBUG - send_request_headers.started request=<Request [b'POST']>
+2026-06-28 20:09:07,019 - DEBUG - send_request_headers.complete
+2026-06-28 20:09:07,019 - DEBUG - send_request_body.started request=<Request [b'POST']>
+2026-06-28 20:09:07,019 - DEBUG - send_request_body.complete
+2026-06-28 20:09:07,019 - DEBUG - receive_response_headers.started request=<Request [b'POST']>
+2026-06-28 20:09:07,649 - DEBUG - receive_response_headers.complete return_value=(b'HTTP/1.1', 200, b'OK', [(b'Date', b'Mon, 29 Jun 2026 03:09:08 GMT'), (b'Content-Type', b'application/json'), (b'Transfer-Encoding', b'chunked'), (b'Connection', b'keep-alive'), (b'Server', b'cloudflare'), (b'x-request-id', b'a131bb0968d83d1b-PDX'), (b'x-ratelimit-remaining-requests-minute', b'99'), (b'x-ratelimit-remaining-requests-hour', b'5999'), (b'x-ratelimit-remaining-requests-day', b'143999'), (b'x-ratelimit-remaining-tokens-minute', b'83216'), (b'x-ratelimit-remaining-tokens-hour', b'5983216'), (b'x-ratelimit-remaining-tokens-day', b'143983216'), (b'x-ratelimit-limit-requests-minute', b'100'), (b'x-ratelimit-limit-requests-hour', b'6000'), (b'x-ratelimit-limit-requests-day', b'144000'), (b'x-ratelimit-limit-tokens-minute', b'100000'), (b'x-ratelimit-limit-tokens-hour', b'6000000'), (b'x-ratelimit-limit-tokens-day', b'144000000'), (b'inference-id', b'chatcmpl-61a6e92e-9e8e-4def-abbc-6c9ece77c0ae'), (b'referrer-policy', b'strict-origin-when-cross-origin'), (b'x-content-type-options', b'nosniff'), (b'strict-transport-security', b'max-age=15552000; includeSubDomains; preload'), (b'cf-cache-status', b'DYNAMIC'), (b'set-cookie', b'__cf_bm=Uyu2BFFLxX1pkC2dGGCd5zoCRjuepsIkaxNYlrxriZU-1782702547.4249983-1.0.1.1-78tX7dvlbCqDxme0K0v84VIV.vxuK5xuhtiyFN0ZGe5s3bQILPkOXJnH.8mrVviNDNrqSdcUqAUS7BgRJsOl.SvyK.QstSAjgtoBKJYwCHW12d0ypdc2O7zcb8Yc4Zo_; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:39:08 GMT'), (b'Content-Encoding', b'gzip'), (b'CF-RAY', b'a131bb0968d83d1b-PDX'), (b'alt-svc', b'h3=":443"; ma=86400')])
+2026-06-28 20:09:07,649 - INFO - HTTP Request: POST https://api.cerebras.ai/v1/chat/completions "HTTP/1.1 200 OK"
+2026-06-28 20:09:07,649 - DEBUG - receive_response_body.started request=<Request [b'POST']>
+2026-06-28 20:09:07,649 - DEBUG - receive_response_body.complete
+2026-06-28 20:09:07,649 - DEBUG - response_closed.started
+2026-06-28 20:09:07,649 - DEBUG - response_closed.complete
+2026-06-28 20:09:07,650 - DEBUG - HTTP Response: POST https://api.cerebras.ai/v1/chat/completions "200 OK" Headers({'date': 'Mon, 29 Jun 2026 03:09:08 GMT', 'content-type': 'application/json', 'transfer-encoding': 'chunked', 'connection': 'keep-alive', 'server': 'cloudflare', 'x-request-id': 'a131bb0968d83d1b-PDX', 'x-ratelimit-remaining-requests-minute': '99', 'x-ratelimit-remaining-requests-hour': '5999', 'x-ratelimit-remaining-requests-day': '143999', 'x-ratelimit-remaining-tokens-minute': '83216', 'x-ratelimit-remaining-tokens-hour': '5983216', 'x-ratelimit-remaining-tokens-day': '143983216', 'x-ratelimit-limit-requests-minute': '100', 'x-ratelimit-limit-requests-hour': '6000', 'x-ratelimit-limit-requests-day': '144000', 'x-ratelimit-limit-tokens-minute': '100000', 'x-ratelimit-limit-tokens-hour': '6000000', 'x-ratelimit-limit-tokens-day': '144000000', 'inference-id': 'chatcmpl-61a6e92e-9e8e-4def-abbc-6c9ece77c0ae', 'referrer-policy': 'strict-origin-when-cross-origin', 'x-content-type-options': 'nosniff', 'strict-transport-security': 'max-age=15552000; includeSubDomains; preload', 'cf-cache-status': 'DYNAMIC', 'set-cookie': '__cf_bm=Uyu2BFFLxX1pkC2dGGCd5zoCRjuepsIkaxNYlrxriZU-1782702547.4249983-1.0.1.1-78tX7dvlbCqDxme0K0v84VIV.vxuK5xuhtiyFN0ZGe5s3bQILPkOXJnH.8mrVviNDNrqSdcUqAUS7BgRJsOl.SvyK.QstSAjgtoBKJYwCHW12d0ypdc2O7zcb8Yc4Zo_; HttpOnly; SameSite=None; Secure; Path=/; Domain=api.cerebras.ai; Expires=Mon, 29 Jun 2026 03:39:08 GMT', 'content-encoding': 'gzip', 'cf-ray': 'a131bb0968d83d1b-PDX', 'alt-svc': 'h3=":443"; ma=86400'})
+2026-06-28 20:09:07,650 - DEBUG - request_id: a131bb0968d83d1b-PDX
+2026-06-28 20:09:07,654 - DEBUG - Merging subtitles into C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv...
+2026-06-28 20:09:07,769 - DEBUG - Merge successful! Saved as C:\Users\karna\Videos\Screen Recordings\30_sec_vid_translated.mkv
+2026-06-28 20:09:08,032 - DEBUG - close.started
+2026-06-28 20:09:08,033 - DEBUG - close.complete
